@@ -105,16 +105,16 @@ Run the files
 
 Feature Extraction was implemented using the first method - PCA. In this method we represent each image or dataset as a **linear combination** of **orthonormal** set of basis vectors -
 
-<img src='pat1.png' width=500px height="100px"><br><br>
+<img src='pat1.png' width=500px><br><br>
 
 PCA basically maps or represents x in a new **lower dimensional** space -
 
-<img src='pat2.png' width=500px height="100px"><br><br>
+<img src='pat2.png' width=500px><br><br>
 
 The optimal lower dimensional basis vectors u 1, u 2, ...... u k are basically the **eigenvectors** of the covariance
 matrix of the data.
 
-<img src='pat3.png' width=500px height="100px"><br><br>
+<img src='pat3.png' width=500px><br><br>
 
 The **K ‘Largest’ eigenvectors** corresponding to the **K ‘Largest’ eigenvalues** are chosen as the optimal basis vectors.
 
