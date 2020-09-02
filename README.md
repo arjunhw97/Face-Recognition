@@ -19,7 +19,7 @@ fb_H - **High** resolution **testing** images (Alternate frontal images)<br>
 fa_L - **Low** resolution **training** images (Frontal images)<br>
 fb_L - **Low** resolution **testing** images (Alternate frontal images)
 
-All faces have been normalized with regards to orientation, position, and size. Also, they have been masked to include only the face region (i.e., upper body and background were cropped out). The first subset (fa) contains 1203 images from 867 subjects while the second subset (fb)contains 1196 images from the 866 subjects (i.e., there is one subject in fa who is not in fb). You have been provided with two different sizes.
+All faces have been normalized with regards to orientation, position, and size. Also, they have been masked to include only the face region (i.e., upper body and background were cropped out). The first subset (fa) contains 1203 images from 867 subjects while the second subset (fb) contains 1196 images from the 866 subjects (i.e., there is one subject in fa who is not in fb). You have been provided with two different sizes.
 
 for each image: low resolution (16 x 20) and high resolution (48 x 60).
 
@@ -28,7 +28,7 @@ The file naming convention for the FERET database is as follows:
 
 ->**nnnnn_yymmdd_xx_q.pgm**<-
 
-where **nnnnn** is a five digit integer that uniquely identifies the subject, **yymmdd** indicates the year, month, and date when the photo was taken, **xx** is a lowercase character string (i.e., either fa or fb), and q is a flag (e.g., indicating whether the subject wears glasses - not always present).
+where **nnnnn** is a five digit integer that uniquely identifies the subject, **yymmdd** indicates the year, month, and date when the photo was taken, **xx** is a lowercase character string (i.e., either fa or fb), and **q** is a flag (e.g., indicating whether the subject wears glasses - not always present).
 
 
 ## Execution
@@ -54,13 +54,13 @@ The files should be executed in this order -
 
 **Execute cpfile.py with fb_H instead of fa_H**
 
-- dimred.cc: Maps the eigenvectors of the training images to a lower dimensional eigenspace and writes these 'omega' vectors to the directory /fa_H_omega in files (filename)omega.txt (filename corresponds to the name of the **training images**). Retreives the testing images from fb_H, projects it into the eigenspace (lower dimensionality) and writes the 'omega' vectors to the directory /fb_H_omega in files (filename)omega.txt (filename corresponds to the name of the **testing** images).
+- dimred.cc: Maps the eigenvectors of the training images to a lower dimensional eigenspace and writes these 'omega' vectors to the directory /fa_H_omega in files (filename)omega.txt (filename corresponds to the name of the **training** images). Retreives the testing images from fb_H, projects it into the eigenspace (lower dimensionality) and writes the 'omega' vectors to the directory /fb_H_omega in files (filename)omega.txt (filename corresponds to the name of the **testing** images).
 
 **Please Note: You may change the percentage of information retained by the eigenspace by changing the value of the variable 'perc' (currently = 80) in the above file.**
 
 - recog.cc: Calculates the Mahalanobis distance between training and testing omega vectors and if the difference is less than a certain threshold (see Theory) then the two images are classified as the same. The rank and the performance is recorded in the files fa_H_index.txt and fa_H_perf.txt respectively. 
 
-**Please Note: The variable 'vec' in the above file should be set as the length of one of the omega vectors (Changes with the percentage of information set in dimred2.cc).**
+**Please Note: The variable 'vec' in the above file should be set as the length of one of the omega vectors (Changes with the percentage of information set in dimred.cc).**
 
 - plot.py: Plots the Comparitive CMC Graph based on the rank and the performance stored
 
@@ -80,7 +80,7 @@ Run the files
 
 - filextract.py: creates a new file fa2_H_rem.txt and stores all the filenames in /fa2_H
 
-- Now run the files from test.cc to eigvec.cc in the same order mentioned previously. Make sure to change the number of images from '1204' to '1119'.
+- Now run the files from **test.cc to eigvec.cc** in the same order mentioned previously. Make sure to change the number of images from **'1204' to '1119'.**
 
 - dimred2.cc: Same as dimred.cc 
 
@@ -88,7 +88,7 @@ Run the files
 	- True Positive: recognized or classified images in fb_H **present** in fa2_H
 	- False Positive: unrecognized images in fb_H **present** in fa2_H 
 	- True Negative: unrecognized images in fb_H **not present** in fa2_H
-	- False Negative: unrecognized images in fb_H **present** in fa2_H
+	- False Negative: recognized or classified images in fb_H **not present** in fa2_H
 
 
 **You may now repeat the same steps mentioned above, for lower resolution images by changing, in each file, the string filenames from 'fa2_H' to 'fa2_L' as well as 'fb_H' to 'fb_L' respectively and setting the resolution variables - M = 16 and N = 20.**
@@ -105,7 +105,7 @@ Run the files
 
 Feature Extraction was implemented using the first method - PCA. In this method we represent each image or dataset as a **linear combination** of **orthonormal** set of basis vectors -
 
-<img src='pat1.PNG' width=500px><br><br>
+<img src='pat1.png' width=500px><br><br>
 
 PCA basically maps or represents x in a new **lower dimensional** space -
 
