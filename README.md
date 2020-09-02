@@ -13,8 +13,8 @@
 
 images from the FERET face database. FERET contains a large number of images acquired during different photo sessions and has a good variety of gender, ethnicity and age groups. The lighting conditions, face orientation and time of capture vary.
 
-fa_H - **High** resolution **training** images (Frontal images)
-fb_H - **High** resolution **testing** images (Alternate frontal images)
+fa_H - **High** resolution **training** images (Frontal images)<br>
+fb_H - **High** resolution **testing** images (Alternate frontal images)<br>
 
 fa_L - **Low** resolution **training** images (Frontal images)
 fb_L - **Low** resolution **testing** images (Alternate frontal images)
