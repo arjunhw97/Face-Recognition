@@ -109,12 +109,12 @@ Feature Extraction was implemented using the first method - PCA. In this method 
 
 PCA basically maps or represents x in a new **lower dimensional** space -
 
-<img src='pat2.PNG' width=500px><br><br>
+<img src='pat2.png' width=500px><br><br>
 
 The optimal lower dimensional basis vectors u 1, u 2, ...... u k are basically the **eigenvectors** of the covariance
 matrix of the data.
 
-<img src='pat3.PNG' width=500px><br><br>
+<img src='pat3.png' width=500px><br><br>
 
 The **K ‘Largest’ eigenvectors** corresponding to the **K ‘Largest’ eigenvalues** are chosen as the optimal basis vectors.
 
@@ -124,23 +124,23 @@ Training images - x1 , x2 , x3 ,......xM vectors of size N
 
 Step 1: Compute the **sample mean**
 
-<img src='pat4.PNG' width=500px><br><br>
+<img src='pat4.png' width=500px><br><br>
 
 Step2: Subtract mean from the training data
 
-<img src='pat5.PNG' width=500px><br><br>
+<img src='pat5.png' width=500px><br><br>
 
 Step 3: Compute the sample **Covariance matrix**
 
-<img src='pat6.PNG' width=500px><br><br>
+<img src='pat6.png' width=500px><br><br>
 
 Step 4: Compute the eigenvalues and the eigenvectors of the covariance matrix using eq(3)
 
-<img src='pat7.PNG' width=500px><br><br>
+<img src='pat7.png' width=500px><br><br>
 
 Step 5: Approximate x using the first largest K eigenvectors K<<N.
 
-<img src='pat8.PNG' width=500px><br><br>
+<img src='pat8.png' width=500px><br><br>
 
 
 ### Eigenface Implementation
@@ -155,7 +155,7 @@ Step 4 - Now let us assume the eigenvalues and eigenvectors for the newly formed
 
 Step 4b - After Multiplying both sides with by A and simplifying we get the eigenvectors and eigenvalues as follows -
 
-<img src='pat9.PNG' width=500px><br><br>
+<img src='pat9.png' width=500px><br><br>
 
 M eigenvalues and eigenvectors obtained are also the M largest eigenvalues and eigenvectors of A x Transpose(A). Hence by using eq(11) we get the N eigenvectors.
 
@@ -176,23 +176,23 @@ For each unknown test image Γ ,
 
 Step 1 - The mean face Ψ from the training was subtracted
 
-<img src='pat10.PNG' width=500px><br><br>
+<img src='pat10.png' width=500px><br><br>
 
 Step 2 - The unknown face was projected in the eigenspace -
 
-<img src='pat11.PNG' width=500px><br><br>
+<img src='pat11.png' width=500px><br><br>
 
 Step 3 - Image from the training set that matches the given image is selected by finding the **Mahalanobis Distance** between the two vectors Ω and Ω i . For each pair (Ω, Ω i ), where i = 1,2,3....M.
 
-<img src='pat12.PNG' width=500px><br><br>
+<img src='pat12.png' width=500px><br><br>
 
-<img src='pat13.PNG' width=500px><br><br>
+<img src='pat13.png' width=500px><br><br>
 
 This distance is called **distance in face space (difs).**
 
 The threshold or the no: of eigenvalues to preserve 80% of the information was computed as follows -
 
-<img src='pat14.PNG' width=500px><br><br>
+<img src='pat14.png' width=500px><br><br>
 
 After calculating k, we ran the test from N = 1 to 50 inorder to get the values to plot the CMC curves.
 
@@ -204,28 +204,28 @@ The images corresponding to 50 subjects were removed, their file names written t
 
 ### High Resolution
 
-<img src='pat15.PNG' width=500px><br><br>
+<img src='pat15.png' width=500px><br><br>
 
-<img src='pat16.PNG' width=500px><br><br>
+<img src='pat16.png' width=500px><br><br>
 
 Three correctly classified images for 80% information: 
 
-<img src='pat17.PNG' width=500px><br><br>
+<img src='pat17.png' width=500px><br><br>
 
-<img src='pat18.PNG' width=500px><br><br>
+<img src='pat18.png' width=500px><br><br>
 
 
 ### Low Resolution
 
-<img src='pat19.PNG' width=500px><br><br>
+<img src='pat19.png' width=500px><br><br>
 
-<img src='pat20.PNG' width=500px><br><br>
+<img src='pat20.png' width=500px><br><br>
 
 Three correctly classified images for 80% information:
 
-<img src='pat21.PNG' width=500px><br><br>
+<img src='pat21.png' width=500px><br><br>
 
-<img src='pat22.PNG' width=500px><br><br>
+<img src='pat22.png' width=500px><br><br>
 
 
 
