@@ -16,7 +16,7 @@ images from the FERET face database. FERET contains a large number of images acq
 fa_H - **High** resolution **training** images (Frontal images)<br>
 fb_H - **High** resolution **testing** images (Alternate frontal images)<br>
 
-fa_L - **Low** resolution **training** images (Frontal images)
+fa_L - **Low** resolution **training** images (Frontal images)<br>
 fb_L - **Low** resolution **testing** images (Alternate frontal images)
 
 All faces have been normalized with regards to orientation, position, and size. Also, they have been masked to include only the face region (i.e., upper body and background were cropped out). The first subset (fa) contains 1203 images from 867 subjects while the second subset (fb)contains 1196 images from the 866 subjects (i.e., there is one subject in fa who is not in fb). You have been provided with two different sizes.
